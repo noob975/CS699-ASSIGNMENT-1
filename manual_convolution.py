@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 
-cat = plt.imread("0000.jpg")
+cat = plt.imread("0000.jpg") #first image in  training data of "cat" category
 cat = cv2.cvtColor(cat, cv2.COLOR_BGR2GRAY)
 
 def normal_kernel(size=3, dev=0.3):
