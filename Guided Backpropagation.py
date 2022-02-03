@@ -33,7 +33,7 @@ def normalize(img):
 def comparison_plot(img1, img2,vmin=0.3,vmax=0.7, mix_val=2):
     f = plt.figure(figsize=(20,50))
     plt.subplot(1,2,1)
-    plt.imshow(img1,vmin=vmin, vmax=vmax, cmap="gray")
+    plt.imshow(img1,vmin=vmin, vmax=vmax, cmap = "gray")
     plt.axis("off")
     plt.subplot(1,2,2)
     plt.imshow(img2, cmap = "gray")
@@ -95,12 +95,9 @@ def trackEffect(input_img, Top = 5):
             grads = tape.gradient(max_conv, input_img)
             comparison_plot(normalize(grads[0]), normalize(input_img[0]))
         
-    return 0
+    return most_activated, conv
     
-trackEffect(input_image)
-    
-#%%
-
+top5_neurons, output = trackEffect(input_image)
 
     
     
